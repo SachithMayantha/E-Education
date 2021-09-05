@@ -7,16 +7,13 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.sql.Time;
-import java.util.List;
-
-@Document(collection = "onlineClass")
+@Document(collection = "tutors")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
-public class OnlineClass {
+public class Tutors {
     @Id
     private String id;
-    private String subject;
-    private String Date;
-    private Time classTime;
-    private List<Students> listStd;
+    private String tutor_name;
+    private String tutor_email;
+    private String tutor_password;
+
 }
