@@ -10,10 +10,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "tutors")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Tutors {
-    @Id
     private String id;
     private String tutor_name;
     private String tutor_email;
     private String tutor_password;
-
 }
