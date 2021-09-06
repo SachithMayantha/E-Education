@@ -19,7 +19,7 @@ public class ClassController {
         return classService.addClass(onlineClass);
     }
 
-    @GetMapping("getAll")
+    @GetMapping
     public List<OnlineClass> getClasses(){
         return classService.getClasses();
     }
@@ -27,5 +27,16 @@ public class ClassController {
     @GetMapping("{id}")
     public Optional<OnlineClass> getOneClass(@PathVariable("id") String id){
         return classService.getOneClass(id);
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteClass(@PathVariable("id") String id){
+//        @RequestParam
+        classService.deleteClass(id);
+    }
+
+    @PutMapping("{id}")
+    public OnlineClass updateClass(@RequestBody OnlineClass onlineClass){
+        return classService.updateClass(onlineClass);
     }
 }

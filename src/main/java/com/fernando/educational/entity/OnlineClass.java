@@ -7,7 +7,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.sql.Time;
+import java.time.LocalTime;
 import java.util.List;
 
 @Document(collection = "onlineClass")
@@ -16,7 +16,7 @@ public class OnlineClass {
     @Id
     private String id;
     private String subject;
-    private String Date;
-    private Time classTime;
+    private String date;
+    private LocalTime classTime;
     private List<Students> listStd;
 }

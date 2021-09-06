@@ -24,4 +24,12 @@ public class ClassService {
     public Optional<OnlineClass> getOneClass(String id){
         return classRepository.findById(id);
     }
+
+    public void deleteClass(String id) {
+        classRepository.deleteById(id);
+    }
+
+    public OnlineClass updateClass(OnlineClass onlineClass) {
+        return classRepository.save(onlineClass);
+    }
 }
