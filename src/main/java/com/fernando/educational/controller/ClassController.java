@@ -15,28 +15,43 @@ public class ClassController {
     ClassService classService;
 
     @PostMapping
-    public OnlineClass saveClass(@RequestBody OnlineClass onlineClass){
-        return classService.addClass(onlineClass);
+    public String saveClass(@RequestBody OnlineClass onlineClass) {
+        try {
+            classService.addClass(onlineClass);
+            return "ok";
+        } catch (Exception e) {
+            return "fail";
+        }
     }
 
     @GetMapping
-    public List<OnlineClass> getClasses(){
+    public List<OnlineClass> getClasses() {
         return classService.getClasses();
     }
 
     @GetMapping("{id}")
-    public Optional<OnlineClass> getOneClass(@PathVariable("id") String id){
+    public Optional<OnlineClass> getOneClass(@PathVariable("id") String id) {
         return classService.getOneClass(id);
     }
 
     @DeleteMapping
-    public void deleteClass(@RequestParam String id){
-//        @RequestParam
-        classService.deleteClass(id);
+    public String deleteClass(@RequestParam String id) {
+        try {
+            classService.deleteClass(id);
+            return "ok";
+        } catch (Exception e) {
+            return "fail";
+        }
+
     }
 
     @PutMapping("{id}")
-    public OnlineClass updateClass(@RequestBody OnlineClass onlineClass){
-        return classService.updateClass(onlineClass);
+    public String updateClass(@RequestBody OnlineClass onlineClass) {
+        try {
+            classService.updateClass(onlineClass);
+            return "ok";
+        } catch (Exception e) {
+            return "fail";
+        }
     }
 }
