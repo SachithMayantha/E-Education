@@ -16,6 +16,7 @@ public class ClassController {
 
     @PostMapping
     public OnlineClass saveClass(@RequestBody OnlineClass onlineClass) {
+//        onlineClass.setListStd(null);
         return classService.addClass(onlineClass);
     }
 
