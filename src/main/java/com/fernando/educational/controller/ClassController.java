@@ -11,7 +11,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/class")
 public class ClassController {
-    @Autowired(required = true)
+    @Autowired
     ClassService classService;
 
     @PostMapping
@@ -29,8 +29,8 @@ public class ClassController {
         return classService.getOneClass(id);
     }
 
-    @DeleteMapping("{id}")
-    public void deleteClass(@PathVariable("id") String id){
+    @DeleteMapping
+    public void deleteClass(@RequestParam String id){
 //        @RequestParam
         classService.deleteClass(id);
     }

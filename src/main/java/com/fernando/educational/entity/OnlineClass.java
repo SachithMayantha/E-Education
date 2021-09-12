@@ -17,6 +17,6 @@ public class OnlineClass {
     private String id;
     private String subject;
     private String date;
-    private LocalTime classTime;
+    private String classTime;
     private List<Students> listStd;
 }
