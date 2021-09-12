@@ -14,7 +14,7 @@ import java.util.List;
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class OnlineClass {
     @Id
-    private int id;
+    private String id;
     private String subject;
     private String date;
     private String classTime;
