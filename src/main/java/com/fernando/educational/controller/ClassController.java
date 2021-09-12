@@ -15,13 +15,8 @@ public class ClassController {
     ClassService classService;
 
     @PostMapping
-    public String saveClass(@RequestBody OnlineClass onlineClass) {
-        try {
-            classService.addClass(onlineClass);
-            return "ok";
-        } catch (Exception e) {
-            return "fail";
-        }
+    public OnlineClass saveClass(@RequestBody OnlineClass onlineClass) {
+        return classService.addClass(onlineClass);
     }
 
     @GetMapping
