@@ -16,7 +16,6 @@ public class ClassController {
 
     @PostMapping
     public OnlineClass saveClass(@RequestBody OnlineClass onlineClass) {
-//        onlineClass.setListStd(null);
         return classService.addClass(onlineClass);
     }
 
@@ -41,7 +40,7 @@ public class ClassController {
 
     }
 
-    @PutMapping("{id}")
+    @PutMapping
     public String updateClass(@RequestBody OnlineClass onlineClass) {
         try {
             classService.updateClass(onlineClass);

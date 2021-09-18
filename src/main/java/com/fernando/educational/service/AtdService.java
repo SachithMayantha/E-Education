@@ -5,6 +5,8 @@ import com.fernando.educational.repository.AtdRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AtdService {
 
@@ -13,5 +15,9 @@ public class AtdService {
 
     public Attendance saveAtd(Attendance attendance){
         return atdRepository.save(attendance);
+    }
+
+    public List<Attendance> getAtd(String user_id, String subject) {
+        return atdRepository.findByUserIdAndSubject(user_id,subject);
     }
 }
