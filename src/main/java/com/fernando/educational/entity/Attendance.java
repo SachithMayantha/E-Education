@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter @Setter @NoArgsConstructor
 @AllArgsConstructor
 public class Attendance{
-    @Id
+    
     private String userId;
     private String detectedTime;
     private String fullTime;
