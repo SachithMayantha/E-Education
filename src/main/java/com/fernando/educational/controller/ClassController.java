@@ -16,6 +16,7 @@ public class ClassController {
 
     @PostMapping
     public OnlineClass saveClass(@RequestBody OnlineClass onlineClass) {
+        onlineClass.setSubject(onlineClass.getSubject().toUpperCase());
         return classService.addClass(onlineClass);
     }
 
@@ -43,6 +44,7 @@ public class ClassController {
     @PutMapping
     public String updateClass(@RequestBody OnlineClass onlineClass) {
         try {
+            onlineClass.setSubject(onlineClass.getSubject().toUpperCase());
             classService.updateClass(onlineClass);
             return "ok";
         } catch (Exception e) {

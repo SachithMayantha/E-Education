@@ -9,5 +9,4 @@ import lombok.Setter;
 public class Graph {
     private int real;
     private int detected;
-
 }
