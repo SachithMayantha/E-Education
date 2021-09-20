@@ -18,6 +18,7 @@ public class ClassController {
 
     @PostMapping
     public OnlineClass saveClass(@RequestBody OnlineClass onlineClass) {
+        onlineClass.setListStd(null);
         onlineClass.setSubject(onlineClass.getSubject().toUpperCase());
         return classService.addClass(onlineClass);
     }
