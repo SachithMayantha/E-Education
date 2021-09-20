@@ -1,7 +1,11 @@
 package com.fernando.educational.service;
 
+import com.fernando.educational.entity.ClassStudent;
 import com.fernando.educational.entity.OnlineClass;
+import com.fernando.educational.entity.Students;
 import com.fernando.educational.repository.ClassRepository;
+import com.fernando.educational.repository.ClassStdRepository;
+import com.fernando.educational.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,8 +14,11 @@ import java.util.Optional;
 
 @Service
 public class ClassService {
-    @Autowired(required = true)
+    @Autowired
     ClassRepository classRepository;
+
+    @Autowired
+    ClassStdRepository classStdRepository;
 
     public OnlineClass addClass(OnlineClass onlineClass){
         return classRepository.save(onlineClass);
@@ -31,5 +38,9 @@ public class ClassService {
 
     public OnlineClass updateClass(OnlineClass onlineClass) {
         return classRepository.save(onlineClass);
+    }
+
+    public List<ClassStudent> getStudents() {
+        return classStdRepository.findAll();
     }
 }

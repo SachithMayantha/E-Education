@@ -1,6 +1,8 @@
 package com.fernando.educational.controller;
 
+import com.fernando.educational.entity.ClassStudent;
 import com.fernando.educational.entity.OnlineClass;
+import com.fernando.educational.entity.Students;
 import com.fernando.educational.service.ClassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -50,5 +52,10 @@ public class ClassController {
         } catch (Exception e) {
             return "fail";
         }
+    }
+
+    @GetMapping("/students")
+    public List<ClassStudent> getStudents(){
+        return classService.getStudents();
     }
 }
